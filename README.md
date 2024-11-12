@@ -140,3 +140,5 @@ type Query {
 ```
 
 ## Coverage
+
+![image](https://github.com/user-attachments/assets/2e36e962-a904-486d-be92-dff18a782409)

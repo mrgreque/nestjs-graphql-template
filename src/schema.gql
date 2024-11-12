@@ -1,0 +1,118 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Application {
+  id: String
+  name: String!
+}
+
+input CreateApplicationInput {
+  name: String!
+}
+
+type CreateApplicationResponse {
+  errorMessage: String
+  success: Boolean!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+  role: UserRoles!
+}
+
+type CreateUserResponse {
+  errorMessage: String
+  success: Boolean!
+  user: User
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type DefaultOperationResponse {
+  errorMessage: String
+  success: Boolean!
+}
+
+input DefaultPaginationInput {
+  limit: Int!
+  page: Int!
+}
+
+type FindApplicationsOutput {
+  applications: [Application!]!
+  hasNext: Boolean!
+  records: Float!
+}
+
+type Mutation {
+  createApplication(data: CreateApplicationInput!): CreateApplicationResponse!
+  createUser(data: CreateUserInput!): CreateUserResponse!
+  deleteApplication(id: String!): DefaultOperationResponse!
+  deleteUser(id: String!): DefaultOperationResponse!
+  login(email: String!, password: String!): TokenResponse!
+  refreshToken(token: String!): TokenResponse!
+  updateApplication(data: UpdateApplicationInput!): UpdateApplicationResponse!
+  updateUser(data: UpdateUserInput!): CreateUserResponse!
+}
+
+type Query {
+  application(id: String!): Application!
+  applications(pagination: DefaultPaginationInput!): FindApplicationsOutput!
+  user(id: String!): User!
+  users(pagination: DefaultPaginationInput!): UserPagination!
+}
+
+type Session {
+  refreshToken: String
+  token: String!
+}
+
+type TokenResponse {
+  refreshToken: String!
+  token: String!
+}
+
+input UpdateApplicationInput {
+  id: String!
+  name: String!
+}
+
+type UpdateApplicationResponse {
+  application: Application
+  errorMessage: String
+  success: Boolean!
+}
+
+input UpdateUserInput {
+  email: String
+  id: String!
+  password: String
+  role: UserRoles
+}
+
+type User {
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String!
+  id: String
+  role: UserRoles!
+  session: Session
+  updatedAt: DateTime
+}
+
+type UserPagination {
+  hasNext: Boolean!
+  records: Float!
+  users: [User!]!
+}
+
+enum UserRoles {
+  ADMIN
+  CLIENT
+  USER
+}

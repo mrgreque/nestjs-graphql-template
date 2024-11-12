@@ -19,10 +19,9 @@ This is a template of back-end using **NestJS, GraphQL and MongoDB**.
 
 - **GraphQL API**: Provides a powerful and flexible query language for API requests.
 - **User Management**: Create, read, update, and delete users and manage their associated data.
-- **Application Management**: Create, read, update, and delete users and manage their associated data.
-- **Property Management**: Manage property data with support for relationships to users and applications.
-- **Image Handling**: Supports storing and serving images, including metadata.
-- **Email Service**: Send emails with customizable content for various user interactions.
+- **Application Management**: Create, read, update, and delete apps and manage their associated data.
+- **Image Handling**: Supports storing and serving images, including metadata. (TODO)
+- **Email Service**: Send emails with customizable content for various user interactions. (TODO)
 - **Soft Delete**: Use soft deletion on resources for easy retrieval of deleted items if necessary.
 - **TypeScript for Type Safety**: Leverage TypeScript to ensure type safety throughout the application.
 - **Testing with Jest**: Comprehensive test coverage with Jest for unit and integration tests.
